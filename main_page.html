@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BetView</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='main.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='main_mobile.css') }}" media="screen and (max-width: 768px)">
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">BetView</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Поиск">
+        </div>
+        <div class="language-switcher">
+            <select>
+                <option>🇷🇺</option>
+                <option>🇬🇧</option>
+                <option>🇫🇷</option>
+                <!-- Добавьте другие флаги по необходимости -->
+            </select>
+        </div>
+        <div class="user-button">Имя пользователя</div>
+    </div>
+
+    <div class="nav">
+        <button>Футбол</button>
+        <button>Настольный теннис</button>
+        <button>Баскетбол</button>
+        <button>Теннис</button>
+    </div>
+
+    <div class="toggle-bar">
+        <div class="toggle">
+            <div class="line active" onclick="toggleView('line')">Линия</div>
+            <div class="live" onclick="toggleView('live')">Лайв</div>
+        </div>
+    </div>
+
+    <div class="countries">
+        <div class="country-section">
+            <h2>A</h2>
+            <button class="country-button">Австралия</button>
+            <button class="country-button">Австрия</button>
+            <button class="country-button">Аргентина</button>
+        </div>
+        <div class="country-section">
+            <h2>B</h2>
+            <button class="country-button">Бразилия</button>
+            <button class="country-button">Бельгия</button>
+            <button class="country-button">Болгария</button>
+        </div>
+        <div class="country-section">
+            <h2>C</h2>
+            <button class="country-button">Китай</button>
+            <button class="country-button">Канада</button>
+            <button class="country-button">Чили</button>
+        </div>
+        <div class="country-section">
+            <h2>D</h2>
+            <button class="country-button">Дания</button>
+            <button class="country-button">Германия (Deutschland)</button>
+            <button class="country-button">Доминиканская Республика</button>
+        </div>
+        <!-- Добавьте другие страны и секции по необходимости -->
+    </div>
+
+    <script>
+        function toggleView(mode) {
+            const line = document.querySelector('.toggle .line');
+            const live = document.querySelector('.toggle .live');
+            if (mode === 'line') {
+                line.classList.add('active');
+                live.classList.remove('active');
+            } else {
+                line.classList.remove('active');
+                live.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>
